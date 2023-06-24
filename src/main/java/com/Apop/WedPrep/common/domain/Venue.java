@@ -1,4 +1,4 @@
-package com.Apop.WedPrep.domain;
+package com.Apop.WedPrep.common.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
