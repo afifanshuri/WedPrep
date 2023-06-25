@@ -7,8 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = CommonConstant.BASE_PRFX + "VENUE")
-public class Venue extends BaseEntity{
+@Table(name = CommonConstant.BASE_PRFX + "RECEIPT")
+public class Receipt extends BaseEntity{
 
 	@Id
 	private Long id;
