@@ -4,9 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/main")
 public class MainPage {
 	
-	@RequestMapping(name = "/hi")
+	@RequestMapping("/test")
 	public String getHi() {
 		return "Hi";
 	}
