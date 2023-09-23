@@ -10,10 +10,5 @@ public class WedPrepApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WedPrepApplication.class, args);
 	}
-	
-	 @RequestMapping(value = "/")
-	    public String index() {
-	        return "index.html";
-	   }
 
 }
