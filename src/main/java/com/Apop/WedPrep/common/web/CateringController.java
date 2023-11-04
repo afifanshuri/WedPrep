@@ -14,31 +14,27 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Apop.WedPrep.common.domain.Catering;
 import com.Apop.WedPrep.common.serviceImpl.CateringService;
+import com.Apop.WedPrep.config.RouterConfig;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
-@RequestMapping("/catering")
+@CrossOrigin(origins = RouterConfig.FE_URL)
+@RequestMapping(RouterConfig.BASE_URL + RouterConfig.CATERING_BASE_URL)
 public class CateringController {
 	
 	@Autowired
 	CateringService cateringService;
 	
-	@RequestMapping("/")
-	public String helloWorld() {
-		return "Started catering controller!";
-	}
-	
-	@RequestMapping("/caterings")
+	@RequestMapping(RouterConfig.VIEW)
 	public List<Catering> getCateringList(){
 		return cateringService.getCateringList();
 	}
 	
-	@PostMapping("/add")
+	@PostMapping(RouterConfig.ADD)
 	public String addCatering(@RequestBody Catering catering) {
 		cateringService.addCatering(catering);
 		return "Catering added";
 	}
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping(RouterConfig.DELETE + "/{id}")
 	public String deleteCatering(@PathVariable("id") Long id) {
 		cateringService.deleteCatering(id);
 		return "Catering deleted";
