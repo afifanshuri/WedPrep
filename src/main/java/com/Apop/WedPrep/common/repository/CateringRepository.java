@@ -6,5 +6,5 @@ import com.Apop.WedPrep.common.domain.Catering;
 
 @Repository
 public interface CateringRepository extends BaseRepository<Catering>{
-
+	
 }

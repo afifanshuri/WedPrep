@@ -29,6 +29,11 @@ public class CateringController {
 		return cateringService.getCateringList();
 	}
 	
+	@RequestMapping(RouterConfig.VIEW + "{id}")
+	public Catering getCateringDetails(@PathVariable("id") Long id){
+		return cateringService.getCateringById(id);
+	}
+	
 	@PostMapping(RouterConfig.ADD)
 	public String addCatering(@RequestBody Catering catering) {
 		cateringService.addCatering(catering);
@@ -40,8 +45,4 @@ public class CateringController {
 		return "Catering deleted";
 	}
 	
-	@RequestMapping("/{id}")
-	public Catering getCateringById(@PathVariable("id") Long id) {
-		return cateringService.getCateringById(id);
-	}
 }

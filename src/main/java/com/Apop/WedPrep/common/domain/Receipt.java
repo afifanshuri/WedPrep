@@ -3,13 +3,17 @@ package com.Apop.WedPrep.common.domain;
 import java.math.BigDecimal;
 
 import com.Apop.WedPrep.common.constant.CommonConstant;
+import com.Apop.WedPrep.common.constant.DomainConstant;
+import com.Apop.WedPrep.common.listener.BaseEntityListener;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = CommonConstant.BASE_PRFX + "RECEIPT")
+@Table(name = DomainConstant.BASE_PRFX + DomainConstant.RECEIPT_TABLE_NAME)
+@EntityListeners(BaseEntityListener.class)
 public class Receipt extends BaseEntity{
 
 	@Id

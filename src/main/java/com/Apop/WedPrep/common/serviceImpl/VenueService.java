@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.Apop.WedPrep.common.domain.Venue;
 import com.Apop.WedPrep.common.repository.VenueRepository;
-import com.Apop.WedPrep.common.service.BaseService;
 import com.Apop.WedPrep.common.service.IVenueService;
 
 @Service

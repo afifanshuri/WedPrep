@@ -3,13 +3,16 @@ package com.Apop.WedPrep.common.domain;
 import java.util.Date;
 
 import com.Apop.WedPrep.common.constant.CommonConstant;
+import com.Apop.WedPrep.common.listener.BaseEntityListener;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Table;
 
 @MappedSuperclass
+@EntityListeners(BaseEntityListener.class)
 public class BaseEntity {
 	
 	private Long version;

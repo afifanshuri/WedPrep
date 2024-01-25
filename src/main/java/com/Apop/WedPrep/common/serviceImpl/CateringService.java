@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.Apop.WedPrep.common.domain.Catering;
 import com.Apop.WedPrep.common.repository.CateringRepository;
-import com.Apop.WedPrep.common.service.BaseService;
 import com.Apop.WedPrep.common.service.ICateringService;
 
 @Service
@@ -16,6 +15,7 @@ public class CateringService extends BaseService implements ICateringService{
 	@Autowired
 	private CateringRepository cateringRepository;
 	
+
 	@Override
 	public List<Catering> getCateringList() {
 		return cateringRepository.findAll();

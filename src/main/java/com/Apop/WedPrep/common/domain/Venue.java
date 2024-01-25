@@ -1,13 +1,14 @@
 package com.Apop.WedPrep.common.domain;
 
 import com.Apop.WedPrep.common.constant.CommonConstant;
+import com.Apop.WedPrep.common.constant.DomainConstant;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = CommonConstant.BASE_PRFX + "VENUE")
+@Table(name = DomainConstant.BASE_PRFX + DomainConstant.VENUE_TABLE_NAME)
 public class Venue extends BaseEntity{
 
 	@Id
