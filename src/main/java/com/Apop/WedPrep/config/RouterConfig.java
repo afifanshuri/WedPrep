@@ -7,5 +7,6 @@ public final class RouterConfig {
 	public static final String VIEW = "/view";
 	public static final String ADD = "/add";
 	public static final String DELETE = "/delete";
+	public static final String MENU_BASE_URL = "/menu";
 
 }

@@ -1,8 +1,5 @@
 package com.Apop.WedPrep.common.domain;
 
-import java.util.List;
-
-import com.Apop.WedPrep.common.constant.CommonConstant;
 import com.Apop.WedPrep.common.constant.DomainConstant;
 import com.Apop.WedPrep.common.listener.BaseEntityListener;
 
@@ -14,24 +11,27 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = DomainConstant.BASE_PRFX + DomainConstant.CATERING_TABLE_NAME)
+@Table(name = DomainConstant.BASE_PRFX + DomainConstant.DISTRICT_TABLE_NAME)
 @EntityListeners(BaseEntityListener.class)
-public class Catering extends BaseEntity{
-
+public class District extends BaseEntity{
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="cateringSequenceGenerator")
-	@SequenceGenerator(name="cateringSequenceGenerator",sequenceName="SEQ_CATERING",allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="districtSequenceGenerator")
+	@SequenceGenerator(name="districtSequenceGenerator",sequenceName="SEQ_DISTRICT",allocationSize=1)
 	private Long id;
-	private String cateringName;
+	private String districtCode;
+	private String districtName;
 	
 	@OneToOne
-	@JoinColumn(name = "location_id")
+	@JoinColumn(name = "state_id")
+	private State state;
+	
+	@OneToOne(mappedBy = "district",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Location location;
 	
 	public Long getId() {
@@ -40,19 +40,30 @@ public class Catering extends BaseEntity{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getCateringName() {
-		return cateringName;
+	public String getDistrictName() {
+		return districtName;
 	}
-	public void setCateringName(String cateringName) {
-		this.cateringName = cateringName;
+	public void setDistrictName(String districtName) {
+		this.districtName = districtName;
+	}
+	public State getState() {
+		return state;
+	}
+	public void setState(State state) {
+		this.state = state;
 	}
 	
+	public String getDistrictCode() {
+		return districtCode;
+	}
+	public void setDistrictCode(String districtCode) {
+		this.districtCode = districtCode;
+	}
 	public Location getLocation() {
 		return location;
 	}
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	
 	
 }
